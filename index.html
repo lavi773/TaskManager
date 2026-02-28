@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Mobile First ToDo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <h1>TaskMaster</h1>
+        <p id="date-display"></p>
+    </header>
+
+    <main>
+        <!-- Input Form -->
+        <section class="input-section">
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="What needs to be done?" required>
+                <div class="row">
+                    <input type="date" id="todo-date" required>
+                    <button type="submit" id="add-btn"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Filters -->
+        <section class="filters">
+            <button class="filter-btn active" onclick="filterTasks('all')">All</button>
+            <button class="filter-btn" onclick="filterTasks('pending')">Pending</button>
+            <button class="filter-btn" onclick="filterTasks('completed')">Done</button>
+        </section>
+
+        <!-- Task List -->
+        <section class="todo-list-container">
+            <ul id="todo-list">
+                <!-- Tasks will be injected here by JS -->
+            </ul>
+        </section>
+
+        <!-- API Section: Motivational Quote -->
+        <section class="quote-section">
+            <h3>Daily Motivation</h3>
+            <p id="quote-text">Loading inspiration...</p>
+            <span id="quote-author"></span>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
